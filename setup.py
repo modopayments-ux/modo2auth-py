@@ -3,7 +3,7 @@ from pathlib import Path
 
 setup(
     name="modo2auth",
-    version="1.0.1",
+    version="1.1.0",
     description="Generate Modo Authentication",
     long_description=Path("README.md").read_text(),
     long_description_content_type="text/markdown",
