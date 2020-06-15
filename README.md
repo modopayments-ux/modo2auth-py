@@ -15,8 +15,19 @@ These values will be used when intantiating the library.
 
 # Install
 
+## Via `pipenv`
+```python
+pipenv install modo2auth
+```
+
+## Via `pip`
+```
+pip install modo2auth requests
+```
+
+## Copy/Paste
 1. Copy `modo2auth/modo2auth.py` to your project.
-2. Required dependencies:
+2. Install required dependencies:
     ```bash
     # for dependencies
     sudo easy_install pip
@@ -24,15 +35,14 @@ These values will be used when intantiating the library.
     sudo pip install requests
     ```
 
+
 # Example Usage
 Here's an example using `TBD` to make requests. You can use your preferred method or library.
 
+Note: if installed with `pipenv`, run shell commands via `pipenv shell`
+
 ## `GET` Example
 ```py
-# installs
-#   $ sudo easy_install pip
-#   $ sudo pip install requests
-
 # 1. IMPORT
 import requests
 import modo2auth
@@ -61,10 +71,6 @@ print(response.text)
 
 ## `POST` Example
 ```py
-# installs
-#   $ sudo easy_install pip
-#   $ sudo pip install requests
-
 # 1. IMPORT
 import requests
 import modo2auth
@@ -104,3 +110,37 @@ Returns an instance of the `Sign` class. Intended for use with the [`requests`](
 - `api_identifier` (string) - API key from Modo
 - `api_secret` (string) - API secret from Modo
 - `api_uri` (string) - Api Uri intending to call to (ex: `"/v2/vault/public_key"`)
+
+# Contributing
+1. Fork this repo via Github
+2. Create your feature branch (`git checkout -b feature/my-new-feature`)
+3. Ensure unit tests are passing (none at the moment...)
+4. Commit your changes (`git commit -am 'Add some feature'`)
+5. Push to the branch (`git push origin feature/my-new-feature`)
+6. Create new Pull Request via Github
+   
+## Development
+In the root of the project:
+```bash
+# enter the virtual environment
+pipenv shell
+
+# ...develop away :)
+```
+
+## Publishing
+Prerequisites:
+1. User account on [https://pypi.org/](https://pypi.org/)
+2. User with Access to [https://pypi.org/project/modo2auth/1.0.0/](https://pypi.org/project/modo2auth/1.0.0/)
+
+
+```bash
+# install these globally
+pip3 install setuptools twine wheel
+```
+
+Build and release:
+1. Build release package: `python3 setup.py sdist bdist_wheel`
+2. Upload: `twine upload dist/*`
+3. Tag with new version `git tag v1.1.0` (According to Semantec Versioning guidelines)
+4. Push tags `git push --tags`
