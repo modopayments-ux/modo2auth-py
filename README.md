@@ -140,7 +140,8 @@ pip3 install setuptools twine wheel
 ```
 
 Build and release:
-1. Build release package: `python3 setup.py sdist bdist_wheel`
-2. Upload: `twine upload dist/*`
-3. Tag with new version `git tag v1.1.0` (According to Semantec Versioning guidelines)
-4. Push tags `git push --tags`
+1. Edit version in `setup.py`
+2. Build release package: `python3 setup.py sdist bdist_wheel`
+3. Upload: `twine upload dist/*`
+4. Tag with new version `git tag v1.1.0` (According to Semantec Versioning guidelines)
+5. Push tags `git push --tags`
