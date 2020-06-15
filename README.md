@@ -15,26 +15,15 @@ These values will be used when intantiating the library.
 
 # Install
 
-## Via `pipenv`
-```python
-pipenv install modo2auth
-```
-
 ## Via `pip`
 ```
 pip install modo2auth requests
 ```
 
-## Copy/Paste
-1. Copy `modo2auth/modo2auth.py` to your project.
-2. Install required dependencies:
-    ```bash
-    # for dependencies
-    sudo easy_install pip
-    # for requests
-    sudo pip install requests
-    ```
-
+## Via `pipenv`
+```python
+pipenv install modo2auth
+```
 
 # Example Usage
 Here's an example using `TBD` to make requests. You can use your preferred method or library.
