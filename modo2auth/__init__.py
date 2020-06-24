@@ -5,8 +5,7 @@ import base64
 
 
 def replaceBase64Chars(string):
-    newstring = string.rstrip("=")
-    return newstring
+    return string.replace("=", "").replace("+", "-").replace("/", "_")
 
 
 def base64encodestring(message):
