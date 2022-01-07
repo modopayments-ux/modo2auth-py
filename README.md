@@ -9,7 +9,7 @@
 - `api_identifier` - API key from Modo
 - `api_secret` - API secret from Modo
 
-These values will be used when intantiating the library.
+These values will be used when instantiating the library.
 
 `python` - [See docs](https://www.python.org/downloads/)
 
@@ -30,34 +30,6 @@ Here's an example using `TBD` to make requests. You can use your preferred metho
 
 Note: if installed with `pipenv`, run shell commands via `pipenv shell`
 
-## `GET` Example
-```py
-# 1. IMPORT
-import requests
-import modo2auth
-
-# 2. INSTANTIATE
-# get from Modo
-creds = {
-    "api_identifier": "...",
-    "api_secret":  "..."
-}
-headers = {
-    "Content-Type": "application/json"
-}
-api_host = "http://localhost:82"  # TODO: replace with stable testing env endpoint
-api_uri = "/v2/vault/public_key"
-
-# 3. SEND REQUEST
-response = requests.get(
-    api_host+api_uri,
-    headers=headers,
-    auth=modo2auth.Sign(creds['api_identifier'], creds['api_secret'], api_uri))
-
-print(response.text)
-
-```
-
 ## `POST` Example
 ```py
 # 1. IMPORT
@@ -74,7 +46,7 @@ headers = {
     "Content-Type": "application/json"
 }
 api_host = "http://localhost:82"  # TODO: replace with stable testing env endpoint
-api_uri = "/v2/reports"
+api_uri = "/v3/checkout/list"
 data = '{"start_date": "2020-05-22T00:00:00Z","end_date": "2020-05-26T00:00:00Z"}'
 
 # 3. SEND REQUEST
@@ -98,7 +70,7 @@ Returns an instance of the `Sign` class. Intended for use with the [`requests`](
 
 - `api_identifier` (string) - API key from Modo
 - `api_secret` (string) - API secret from Modo
-- `api_uri` (string) - Api Uri intending to call to (ex: `"/v2/vault/public_key"`)
+- `api_uri` (string) - Api Uri intending to call to (ex: `"/v3/checkout/list"`)
 
 # Contributing
 1. Fork this repo via Github
